@@ -28,3 +28,11 @@ jobs:
             - name: Deploy to Github Pages
               id: deployment
               uses: actions/deploy-pages@v1
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Install modules
+              run: npm install
+            - name: Lint
+              run: npm run lint
